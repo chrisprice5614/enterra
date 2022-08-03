@@ -3,6 +3,8 @@
     src: url(/Assets/fonts/Alsina\ Ultrajada.TTF);
   }
 
+.containerdivNewLine { clear: both; float: none; display: block; position: relative; } 
+
 .mainBody{
     z-index: 0;
     margin-top: 24px;
@@ -18,10 +20,13 @@
     text-indent: 40px;
 }
 
+
+
 .tab { margin-left: 40px; }
 
 h1 {
     font-family: fontAslina;
+    font-size: 48pt;
 }
 
 .centerText{
@@ -33,7 +38,7 @@ h1 {
     overflow: auto;
     margin: 0;
     padding: 0;
-    z-index: 100;
+    z-index: inherit;
     background-image: url(/Assets/Img/Enterra\ Header.jpeg);
     background-position: center -80px;
     background-size: 100% auto;
@@ -47,6 +52,7 @@ h1 {
     margin: 0;
     padding: 0;
     position: sticky;
+    z-index: 1;
     top: 0;
 }
 
@@ -63,23 +69,41 @@ h1 {
     float: left;
     color: white;
     text-decoration: none;
+    transition-duration: 0.6s;
 }
 
 .headerLink a:hover{
     color: lightblue;
-    text-decoration: underline;
+    text-decoration: none;
+    transition-duration: 0.6s;
 }
 
 .fade-in {
-    animation: fadeIn ease 0.5s;
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.fade-in.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.fade-in2 {
+    position: relative;
+    animation: fadeIn ease 1s;
+    z-index: 0;
 }
 
 @keyframes fadeIn {
     0% {
       opacity: 0;
+      top: 100px;
     }
     100% {
       opacity: 1;
+      top: 0px;
     }
 }
 
@@ -90,14 +114,22 @@ h1 {
     width: 80%;
 }
 
+.centerImageS{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
 .halfColumn{
     float: left;
     width: 50%;
 }
 
 .mainBodyText{
-    
+    text-indent:40px;
     padding: 5%;
+    font-size: 18px;
     font-family:Arial, Helvetica, sans-serif;
 }
 
